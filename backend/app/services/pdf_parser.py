@@ -2,15 +2,7 @@ import fitz
 import json
 import os
 
-current = os.path.abspath(__file__)
-while True:
-    parent = os.path.dirname(current)
-    if os.path.exists(os.path.join(parent, "data", "skills_list.json")):
-        BASE_DIR = parent
-        break
-    if parent == current:
-        raise RuntimeError("Tidak bisa menemukan root project")
-    current = parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 def extract_text_from_pdf(file_path: str) -> str:
     try:
