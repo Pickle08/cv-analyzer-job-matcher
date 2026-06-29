@@ -8,6 +8,11 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
+if not DATABASE_URL:
+    print("DEBUG: DATABASE_URL KOSONG! Cek Variable di Dashboard Railway.")
+else:
+    print(f"DEBUG: DATABASE_URL terbaca: {DATABASE_URL[:15]}******")
+
 engine = create_engine(
     DATABASE_URL,
     pool_pre_ping=True,      # cek koneksi sebelum dipakai
