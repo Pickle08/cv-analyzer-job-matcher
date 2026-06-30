@@ -2,7 +2,16 @@ import fitz
 import json
 import os
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# cari root project secara dinamis berdasarkan keberadaan folder 'data'
+current = os.path.abspath(__file__)
+while True:
+    parent = os.path.dirname(current)
+    if os.path.exists(os.path.join(parent, "data", "skills_list.json")):
+        BASE_DIR = parent
+        break
+    if parent == current:
+        raise RuntimeError("Tidak bisa menemukan root project (folder 'data' tidak ditemukan)")
+    current = parent
 
 def extract_text_from_pdf(file_path: str) -> str:
     try:
@@ -30,8 +39,3 @@ def extract_skills_from_text(text: str) -> list:
     
     text_lower = text.lower()
     return [skill for skill in all_skills if skill.lower() in text_lower]
-
-if __name__ == "__main__":
-    print(f"BASE_DIR: {BASE_DIR}")
-    print(f"skills_path: {os.path.join(BASE_DIR, 'data', 'skills_list.json')}")
-    print(f"File exists: {os.path.exists(os.path.join(BASE_DIR, 'data', 'skills_list.json'))}")
