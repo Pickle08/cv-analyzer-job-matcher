@@ -1,0 +1,51 @@
+{
+    "programming": ["Python", "SQL", "R", "Java", "Scala", "JavaScript"],
+    "databases": [
+        "PostgreSQL",
+        "MySQL",
+        "MongoDB",
+        "SQLite",
+        "BigQuery",
+        "Snowflake",
+        "Redis",
+        "Elasticsearch"
+    ],
+    "data_tools": [
+        "Pandas",
+        "NumPy",
+        "Spark",
+        "Airflow",
+        "dbt",
+        "Kafka",
+        "Hadoop",
+        "Hive"
+    ],
+    "visualization": [
+        "Tableau",
+        "Power BI",
+        "Looker",
+        "Metabase",
+        "Matplotlib",
+        "Seaborn",
+        "Google Data Studio"
+    ],
+    "ml_ai": [
+        "Machine Learning",
+        "Deep Learning",
+        "TensorFlow",
+        "PyTorch",
+        "Scikit-learn",
+        "NLP",
+        "Statistics"
+    ],
+    "cloud": ["AWS", "GCP", "Azure", "Google Cloud"],
+    "soft_skills": [
+        "Data Analysis",
+        "Data Visualization",
+        "Problem Solving",
+        "Communication",
+        "Critical Thinking",
+        "Microsoft Excel",
+        "Google Sheets"
+    ]
+}
