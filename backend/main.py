@@ -4,11 +4,10 @@ from app.routers import cv, jobs, analysis
 
 app = FastAPI(title="AI Job Matcher API")
 
-# CORS untuk frontend React
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "https://cv-analyzer-job-matcher.vercel.app"],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
